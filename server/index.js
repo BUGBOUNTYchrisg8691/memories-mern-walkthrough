@@ -1,15 +1,15 @@
+// imports
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-// import routers
-const postsRouter = require("./routes/posts");
-
 // app initialization
 const app = express();
 
 // routers
+// posts
+const postsRouter = require("./routes/posts");
 app.use("/posts", postsRouter);
 
 // app configuration
