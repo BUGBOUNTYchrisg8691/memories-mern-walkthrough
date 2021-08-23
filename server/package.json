@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "memories-mern-walkthrough",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Chris Girvin",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
