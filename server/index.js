@@ -1,28 +1,29 @@
-// imports
+// import deps
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-// app initialization
+// instantiate env variables
+require("dotenv").config();
+const DB_CONN_URL = process.env.MONGO_CONN_URL;
+const PORT = process.env.PORT || 5000;
+
+// initialize app
 const app = express();
 
-// routers
-// posts
-const postsRouter = require("./routes/posts");
-app.use("/posts", postsRouter);
+// import routers module
+const Routers = require("./routers");
+// destructure all routers form routers module
+const { PostsRouter } = Routers;
+app.use("/posts", PostsRouter);
 
 // app configuration
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-// env variables
-require("dotenv").config();
-const DB_CONN_URL = process.env.MONGO_CONN_URL;
-const PORT = process.env.PORT || 5000;
-
-// mongo connection
+// mongo connection and configuration
 mongoose
   .connect(DB_CONN_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() =>
