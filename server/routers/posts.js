@@ -8,12 +8,12 @@ const router = express.Router();
 // import controller modules
 const { PostsController } = require("../controllers");
 
-// destructure endpoints from controller modules
+// destructure endpoint callbacks from controller module
 const { getAllPosts, createPost } = PostsController;
 
 // add routes to the router instance
 router.get("/", getAllPosts);
 router.post("/", createPost);
 
-// export as module
+// export router as a module
 module.exports = router;
