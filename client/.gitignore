@@ -340,11 +340,11 @@ tags
 
 ### VisualStudioCode ###
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
+          !.vscode/settings.json
+          !.vscode/tasks.json
+          !.vscode/launch.json
+          !.vscode/extensions.json
+        *.code-workspace
 
 # Local History for Visual Studio Code
 .history/
@@ -355,19 +355,19 @@ tags
 .ionide
 
 ### Web ###
-*.asp
-*.cer
-*.csr
-*.css
-*.htm
-*.html
-*.js
-*.jsp
-*.php
-*.rss
-*.wasm
-*.wat
-*.xhtml
+# *.asp
+# *.cer
+# *.csr
+# *.css
+# *.htm
+# *.html
+# *.js
+# *.jsp
+# *.php
+# *.rss
+# *.wasm
+# *.wat
+# *.xhtml
 
 ### WebStorm+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
@@ -434,7 +434,7 @@ ehthumbs.db
 ehthumbs_vista.db
 
 # Dump file
-*.stackdump
+        *.stackdump
 
 # Folder config file
 [Dd]esktop.ini
@@ -443,22 +443,22 @@ ehthumbs_vista.db
 $RECYCLE.BIN/
 
 # Windows Installer files
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
+        *.cab
+        *.msi
+        *.msix
+        *.msm
+        *.msp
 
 # Windows shortcuts
-*.lnk
+        *.lnk
 
 ### Zsh ###
 # Zsh compiled script + zrecompile backup
-*.zwc
-*.zwc.old
+        *.zwc
+        *.zwc.old
 
 # Zsh completion-optimization dumpfile
-*zcompdump*
+        *zcompdump*
 
 # Zsh zcalc history
 .zcalc_history
@@ -480,7 +480,7 @@ zsdoc/data
 
 # Zunit tests' output
 /tests/_output/*
-!/tests/_output/.gitkeep
+                 !/tests/_output/.gitkeep
 
 # End of https://www.toptal.com/developers/gitignore/api/react,visualstudiocode,vim,zsh,windows,linux,webstorm+all,jetbrains+all,dotenv,emacs,sass,less,web,amplify,node
 
