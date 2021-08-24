@@ -1,7 +1,8 @@
+// models module
 // import all models
 const PostMessage = require("./postMessage");
 
-// export as module
+// export all models as a module
 module.exports = {
   PostMessage,
 };

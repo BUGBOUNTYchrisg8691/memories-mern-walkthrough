@@ -1,7 +1,8 @@
+// routers module
 // import all routers
 const PostsRouter = require("./posts");
 
-// export as module
+// export all routers as a module
 module.exports = {
   PostsRouter,
 };

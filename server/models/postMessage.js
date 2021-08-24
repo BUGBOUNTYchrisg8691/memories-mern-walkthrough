@@ -2,7 +2,7 @@
 // import deps
 const mongoose = require("mongoose");
 
-// create schema
+// create post schema
 const postSchema = mongoose.Schema({
   title: String,
   message: String,
@@ -19,8 +19,8 @@ const postSchema = mongoose.Schema({
   },
 });
 
-// create mongo model using schema
+// create mongo model using post schema
 const PostMessage = mongoose.model("PostMessage", postSchema);
 
-// export as module
+// export post mongo model as a module
 module.exports = PostMessage;
