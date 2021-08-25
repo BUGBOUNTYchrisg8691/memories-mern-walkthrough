@@ -1,5 +1,6 @@
 // import deps
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
 
 // import views
@@ -11,8 +12,19 @@ import memories from "./assets/images/memories.png";
 // import styles
 import useStyles from "./styles";
 
+// import actions
+import { postsActions } from "./actions";
+// destructure actions from actons modules
+const { getAllPosts } = postsActions;
+
 const App = () => {
+  // destructure style classes
   const { appBar, heading, image } = useStyles();
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(getAllPosts());
+  }, [dispatch]);
 
   return (
     <Container maxWidth="lg">
