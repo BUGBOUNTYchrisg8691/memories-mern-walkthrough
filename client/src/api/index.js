@@ -1,2 +1,3 @@
 // api module
-export * as posts from "./posts";
+// export * as api from './posts';
+export { default as api } from './posts';
