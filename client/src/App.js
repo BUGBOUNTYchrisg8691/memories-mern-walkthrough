@@ -19,6 +19,8 @@ import { postActions } from './actions';
 const { getAllPosts } = postActions;
 
 const App = () => {
+	// keep track of current postId
+	const [currentPostId, setCurrentPostId] = React.useState(null);
 	// destructure style classes
 	const { appBar, heading, image } = useStyles();
 	const dispatch = useDispatch();
@@ -44,10 +46,13 @@ const App = () => {
 						spacing={3}
 					>
 						<Grid item xs={12} sm={7}>
-							<Posts />
+							<Posts setCurrentPostId={setCurrentPostId} />
 						</Grid>
 						<Grid item xs={12} sm={4}>
-							<Form />
+							<Form
+								setCurrentPostId={setCurrentPostId}
+								currentPostId={currentPostId}
+							/>
 						</Grid>
 					</Grid>
 				</Container>

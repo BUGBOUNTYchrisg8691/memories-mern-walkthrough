@@ -1,7 +1,7 @@
 // posts reducer
 // import action types and destructure
 import { ATs } from '../actions';
-const { FETCH_ALL_POSTS, CREATE_POST } = ATs;
+const { FETCH_ALL_POSTS, CREATE_POST, UPDATE_POST } = ATs;
 
 // initialize reducer function
 const posts = (state = [], action) => {
@@ -16,6 +16,8 @@ const posts = (state = [], action) => {
 		// if action type 'CREATE_POST',
 		case CREATE_POST:
 			return [...posts, payload];
+		case UPDATE_POST:
+			return posts.map((post) => (post._id === payload._id ? payload : post));
 		// if none of the cases are met, just return state as is
 		default:
 			return state;
