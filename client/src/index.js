@@ -11,6 +11,9 @@ import reducers from './reducers';
 // import components
 import App from './App';
 
+// import styles
+import './index.css';
+
 // use compose to merge redux enhancements
 // const composedEnhancements = compose(
 // 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
