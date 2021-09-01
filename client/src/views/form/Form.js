@@ -10,7 +10,7 @@ import useStyles from './styles';
 
 // import actions
 import { postActions } from '../../actions';
-const { createPost } = postActions;
+const { createPost, updatePost } = postActions;
 
 // initial state
 const initialFormData = {
@@ -22,7 +22,7 @@ const initialFormData = {
 };
 
 // initialize form arrow function component
-const Form = () => {
+const Form = ({ currentPostId, setCurrentPostId }) => {
 	const [formData, setFormData] = React.useState(initialFormData);
 	const [submitIsDisabled, setSubmitIsDisabled] = React.useState(true);
 	const { root, paper, form: formClass, fileInput, buttonSubmit } = useStyles();
@@ -38,7 +38,12 @@ const Form = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		dispatch(createPost(formData));
+
+		if (currentPostId) {
+			dispatch(updatePost(currentPostId, formData));
+		} else {
+			dispatch(createPost(formData));
+		}
 	};
 
 	const clear = () => {};

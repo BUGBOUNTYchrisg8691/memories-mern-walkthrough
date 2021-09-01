@@ -18,10 +18,11 @@ import moment from 'moment';
 import useStyles from './styles';
 
 // initialize post view arrow function component
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentPostId }) => {
 	const {
 		createdAt,
 		creator,
+		_id,
 		likeCount,
 		message,
 		selectedFile,
@@ -40,7 +41,11 @@ const Post = ({ post }) => {
 				<Typography variant="body2">{moment(createdAt).fromNow()}</Typography>
 			</div>
 			<div className={overlay2}>
-				<Button style={{ color: 'white' }} size="small" onClick={() => {}}>
+				<Button
+					style={{ color: 'white' }}
+					size="small"
+					onClick={() => setCurrentPostId(_id)}
+				>
 					<MoreHorizIcon fontSize="medium" />
 				</Button>
 			</div>

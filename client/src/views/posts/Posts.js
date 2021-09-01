@@ -11,7 +11,7 @@ import { Post } from './post';
 import useStyles from './styles';
 
 // initialize posts arrow function component
-const Posts = () => {
+const Posts = ({ setCurrentPostId }) => {
 	const posts = useSelector((state) => state.posts);
 	const classes = useStyles();
 	const { container } = classes;
@@ -24,7 +24,7 @@ const Posts = () => {
 				<Grid className={container} container alignItems="stretch" spacing={3}>
 					{posts.map((post) => (
 						<Grid key={post._id} item xs={12} sm={6}>
-							<Post post={post} />
+							<Post post={post} setCurrentPostId={setCurrentPostId} />
 						</Grid>
 					))}
 				</Grid>
