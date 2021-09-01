@@ -41,7 +41,7 @@ const Post = ({ post }) => {
 			</div>
 			<div className={overlay2}>
 				<Button style={{ color: 'white' }} size="small" onClick={() => {}}>
-					<MoreHorizIcon fontSize="default" />
+					<MoreHorizIcon fontSize="medium" />
 				</Button>
 			</div>
 			<div className={details}>
@@ -58,7 +58,7 @@ const Post = ({ post }) => {
 				<Button size="small" color="primary" onClick={() => {}}>
 					{likeCount}&nbsp;
 					<ThumbUpAltIcon fontSize="small" />
-					Like;
+					Like
 				</Button>
 				<Button size="small" color="primary" onClick={() => {}}>
 					<DeleteIcon fontSize="small" />
