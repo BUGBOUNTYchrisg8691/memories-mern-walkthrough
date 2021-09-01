@@ -4,7 +4,7 @@ import { api } from '../api';
 
 // import action types
 import ATs from './actionTypes';
-const { FETCH_ALL_POSTS, CREATE_POST, UPDATE_POST } = ATs;
+const { FETCH_ALL_POSTS, FETCH_POST_BY_ID, CREATE_POST, UPDATE_POST } = ATs;
 
 // action creators
 const getAllPosts = () => async (dispatch) => {
@@ -13,6 +13,15 @@ const getAllPosts = () => async (dispatch) => {
 		dispatch({ type: FETCH_ALL_POSTS, payload: data });
 	} catch (err) {
 		console.log('getAllPosts', { err });
+	}
+};
+
+const getPostById = (id) => async (dispatch) => {
+	try {
+		const { data } = await api.fetchPostById(id);
+		dispatch({ type: FETCH_POST_BY_ID, payload: data });
+	} catch (err) {
+		console.log('getPostById', { err });
 	}
 };
 
@@ -36,6 +45,7 @@ const updatePost = (postId, updatedPost) => async (dispatch) => {
 
 const postActions = {
 	getAllPosts,
+	getPostById,
 	createPost,
 	updatePost,
 };

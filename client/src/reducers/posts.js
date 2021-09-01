@@ -1,8 +1,7 @@
 // posts reducer
 // import action types and destructure
 import { ATs } from '../actions';
-const { FETCH_ALL_POSTS, CREATE_POST, UPDATE_POST } = ATs;
-
+const { FETCH_ALL_POSTS, FETCH_POST_BY_ID, CREATE_POST, UPDATE_POST } = ATs;
 // initialize reducer function
 const posts = (state = [], action) => {
 	// destructure type and payload from action
@@ -13,6 +12,8 @@ const posts = (state = [], action) => {
 		// if action type 'FETCH_ALL_POSTS',
 		case FETCH_ALL_POSTS:
 			return payload;
+		case FETCH_POST_BY_ID:
+			return payload.filter((post) => post._id !== payload._id);
 		// if action type 'CREATE_POST',
 		case CREATE_POST:
 			return [...posts, payload];

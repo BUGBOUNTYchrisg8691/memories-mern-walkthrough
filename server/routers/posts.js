@@ -9,10 +9,11 @@ const router = express.Router();
 const { PostsController } = require('../controllers');
 
 // destructure endpoint callbacks from controller module
-const { getAllPosts, createPost, updatePost } = PostsController;
+const { getAllPosts, getPostById, createPost, updatePost } = PostsController;
 
 // add routes to the router instance
 router.get('/', getAllPosts);
+router.get('/:id', getPostById);
 router.post('/', createPost);
 router.patch('/:id', updatePost);
 

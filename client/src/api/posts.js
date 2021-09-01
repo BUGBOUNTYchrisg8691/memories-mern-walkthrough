@@ -9,6 +9,8 @@ const postsUrl = 'http://localhost:5000/posts';
 const fetchAllPosts = () => axios.get(postsUrl);
 // export const fetchAllPosts = () => axios.get(postsUrl);
 
+const fetchPostById = (postId) => axios.get(postsUrl + '/' + postId);
+
 const createPost = (newPost) => axios.post(postsUrl, newPost);
 // export const createPost = (newPost) => axios.post(postsUrl, newPost);
 
@@ -17,6 +19,7 @@ const updatePost = (postId, updatedPost) =>
 
 const api = {
 	fetchAllPosts,
+	fetchPostById,
 	createPost,
 	updatePost,
 };

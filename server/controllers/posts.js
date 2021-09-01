@@ -18,6 +18,19 @@ const getAllPosts = async (req, res) => {
 	}
 };
 
+// get first available colloecton
+const getPostById = async (req, res) => {
+	const { id: _id } = req.params;
+
+	if (Mongoose.Types.ObjectId.isValid(_id))
+		return res.status(404).send('No post with that ID');
+
+	console.log(_id);
+
+	const posts = await PostMessage.findById(_id);
+	res.status(200).json(posts);
+};
+
 // create post asynchronous callback
 const createPost = async (req, res) => {
 	// get new post object from request body
@@ -55,6 +68,7 @@ const updatePost = async (req, res) => {
 // export all endpoint callbacks as a module
 module.exports = {
 	getAllPosts,
+	getPostById,
 	createPost,
 	updatePost,
 };

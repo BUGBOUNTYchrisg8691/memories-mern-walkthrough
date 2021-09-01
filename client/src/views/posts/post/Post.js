@@ -19,6 +19,7 @@ import useStyles from './styles';
 
 // initialize post view arrow function component
 const Post = ({ post, setCurrentPostId }) => {
+	console.log({ post });
 	const {
 		createdAt,
 		creator,
@@ -44,7 +45,9 @@ const Post = ({ post, setCurrentPostId }) => {
 				<Button
 					style={{ color: 'white' }}
 					size="small"
-					onClick={() => setCurrentPostId(_id)}
+					onClick={() => {
+						setCurrentPostId(_id);
+					}}
 				>
 					<MoreHorizIcon fontSize="medium" />
 				</Button>
