@@ -12,16 +12,16 @@ const PORT = process.env.PORT || 5000;
 // initialize app
 const app = express();
 
+// app configuration
+app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(cors());
+
 // import routers module
 const Routers = require("./routers");
 // destructure all routers form routers module
 const { PostsRouter } = Routers;
 app.use("/posts", PostsRouter);
-
-// app configuration
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
 
 // mongo connection and configuration
 mongoose
